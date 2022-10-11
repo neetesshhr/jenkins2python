@@ -7,11 +7,6 @@ node{
             ])
     }
     stage("Family"){
-        def PACKAGE_TYPE= "${PACKAGE_TYPE}"
-        if(PACKAGE_TYPE=="Managed"){
-            echo "Hello"
-        }else{
-            echo "World"
-        }
+       echo "${PACKAGE_TYPE}"
     }
 }
