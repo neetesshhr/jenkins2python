@@ -1,0 +1,17 @@
+node{
+    stage("Parametirized built"){
+         properties([
+                parameters([
+                    choice(name: 'PACKAGE_TYPE', choices:['Managed', 'Unmanaged', 'Unlocked', 'Beta'], description:'Our Package Type' )
+                ])
+            ])
+    }
+    stage("Family"){
+        def PACKAGE_TYPE= "${PACKAGE_TYPE}"
+        if(PACKAGE_TYPE=="Managed"){
+            echo "Hello"
+        }else{
+            echo "World"
+        }
+    }
+}
